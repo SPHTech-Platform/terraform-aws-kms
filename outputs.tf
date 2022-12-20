@@ -4,6 +4,11 @@ output "key_arn" {
 }
 
 output "key_id" {
-  description = "Created Key ID"
+  description = "Created key ID"
   value       = aws_kms_key.key.key_id
+}
+
+output "key_alias" {
+  description = "Created key alias"
+  value       = var.alias != null && var.alias != "" ? aws_kms_alias.key[0].name : null
 }
