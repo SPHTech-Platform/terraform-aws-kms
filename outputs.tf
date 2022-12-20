@@ -10,5 +10,5 @@ output "key_id" {
 
 output "key_alias" {
   description = "Created key alias"
-  value       = aws_kms_alias.key.name
+  value       = var.alias != null && var.alias != "" ? aws_kms_alias.key[0].name : null
 }
