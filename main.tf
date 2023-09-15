@@ -29,8 +29,9 @@ resource "aws_kms_alias" "key" {
 data "aws_iam_policy_document" "iam_key_policy" {
   #checkov:skip=CKV_AWS_109:The policy is deliberately wide because it allows IAM control of the KMS
   #checkov:skip=CKV_AWS_111:The policy is deliberately wide because it allows IAM control of the KMS
+  #checkov:skip=CKV_AWS_356:The policyi s kept wide for IAM control of KMS
   statement {
-    sid = "Enable IAM User Permissions"
+    sid = "Allow administration of the key by key creator account"
 
     principals {
       type        = "AWS"
