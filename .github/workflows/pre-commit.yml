@@ -5,7 +5,7 @@ jobs:
   fmt-validate:
     needs: []
     name: Run format and validate
-    runs-on: ubuntu-latest
+    runs-on: platform-eng-ent-v2-dual
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -32,7 +32,7 @@ jobs:
   lint:
     needs: []
     name: Run tfliint
-    runs-on: ubuntu-latest
+    runs-on: platform-eng-ent-v2-dual
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -55,7 +55,7 @@ jobs:
           flags: --module
   security:
     needs: []
-    runs-on: ubuntu-latest
+    runs-on: platform-eng-ent-v2-dual
     steps:
       - name: Checkout
         uses: actions/checkout@v3
