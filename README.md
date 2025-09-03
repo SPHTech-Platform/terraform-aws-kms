@@ -2,19 +2,18 @@
 
 Create KMS key along with necessary key policies.
 
-<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.15 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.40 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 3.40 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.0 |
 
 ## Modules
 
@@ -45,6 +44,6 @@ No modules.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_key_alias"></a> [key\_alias](#output\_key\_alias) | Created key alias |
 | <a name="output_key_arn"></a> [key\_arn](#output\_key\_arn) | ARN of the key created |
-| <a name="output_key_id"></a> [key\_id](#output\_key\_id) | Created Key ID |
-<!-- END_TF_DOCS -->
+| <a name="output_key_id"></a> [key\_id](#output\_key\_id) | Created key ID |

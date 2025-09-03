@@ -1,0 +1,18 @@
+formatter: "markdown table"
+
+#recursive:
+#  enabled: true
+#  path: modules
+
+output:
+  file: "README.md"
+  mode: replace
+  template: |
+    # KMS
+
+    Create KMS key along with necessary key policies.
+
+    {{ .Content }}
+
+settings:
+  lockfile: false
