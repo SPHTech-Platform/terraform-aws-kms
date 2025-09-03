@@ -18,7 +18,7 @@ data "aws_iam_policy_document" "kms" {
     condition {
       test     = "StringEquals"
       variable = "kms:ViaService"
-      values   = [format("kinesis.%s.amazonaws.com", data.aws_region.current.name)]
+      values   = [format("kinesis.%s.amazonaws.com", data.aws_region.current.region)]
     }
     actions = [
       "kms:Encrypt",
