@@ -29,7 +29,7 @@ jobs:
       - run: terraform -v
   lint:
     needs: []
-    name: Run tfliint
+    name: Run tflint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -52,6 +52,7 @@ jobs:
           # tflint_rulesets: "aws"
           flags: --module
   security:
+    name: Run tfsec
     needs: []
     runs-on: ubuntu-latest
     steps:
