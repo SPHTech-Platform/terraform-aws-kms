@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/gruntwork-io/pre-commit
-    rev: v0.1.22
+    rev: v0.1.30
     hooks:
       - id: terraform-fmt
       - id: terraform-validate
@@ -11,8 +11,15 @@ repos:
       - id: markdown-link-check
       - id: shellcheck
 
+  - repo: https://github.com/tcort/markdown-link-check
+    rev: v3.13.7
+    hooks:
+      - id: markdown-link-check
+        args:
+          - "--config=mlc_config.json"
+
   - repo: https://github.com/antonbabenko/pre-commit-terraform
-    rev: v1.83.0
+    rev: v1.100.0
     hooks:
       - id: terraform_docs
         args:
@@ -21,8 +28,9 @@ repos:
         args:
           - --args=--exclude-downloaded-modules
       - id: checkov
+
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: v6.0.0
     hooks:
       # Git style
       - id: check-added-large-files

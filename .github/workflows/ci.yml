@@ -8,21 +8,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
       - run: git fetch --depth=1 origin +${{github.base_ref}}
-      - uses: actions/setup-python@v2
-        with:
-          python-version: 3.7
+      - uses: actions/setup-python@v3
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
+        uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: latest
       - name: Terraform init
         run: terraform init
       - name: precommit run hooks
-        uses: pre-commit/action@v2.0.3
+        uses: pre-commit/action@v3.0.1
         env:
           SKIP: tflint,markdown-link-check,terraform_docs,terraform_tfsec,checkov
         with:
@@ -31,15 +29,15 @@ jobs:
       - run: terraform -v
   lint:
     needs: []
-    name: Run tfliint
+    name: Run tflint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
+        uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: latest
       - name: Terraform init
@@ -54,11 +52,12 @@ jobs:
           # tflint_rulesets: "aws"
           flags: --module
   security:
+    name: Run tfsec
     needs: []
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
       - name: Run tfsec with reviewdog output on the PR
