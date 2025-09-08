@@ -10,6 +10,12 @@ variable "alias" {
   default     = "alias/terraform"
 }
 
+variable "region" {
+  description = "(Optional) Region for the key. Defaults to AWS provider region."
+  type        = string
+  default     = null
+}
+
 variable "tags" {
   description = "Tags for resoruces"
   type        = map(string)
