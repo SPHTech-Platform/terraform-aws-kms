@@ -1,5 +1,7 @@
 data "aws_caller_identity" "current" {}
 
+data "aws_region" "current" {}
+
 #####################################
 # Allow IAM access to keys
 # See https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html
