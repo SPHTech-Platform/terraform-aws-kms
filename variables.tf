@@ -11,7 +11,7 @@ variable "alias" {
 }
 
 variable "region" {
-  description = "(Optional) Region for the sink. Defaults to AWS provider region."
+  description = "(Optional) Region for the key. Defaults to AWS provider region."
   type        = string
   default     = null
 }
