@@ -1,6 +1,10 @@
 name: terraform-ci
 on:
   pull_request:
+
+permissions:
+  contents: read
+
 jobs:
   fmt-validate:
     needs: []
@@ -31,6 +35,9 @@ jobs:
     needs: []
     name: Run tflint
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -55,6 +62,9 @@ jobs:
     name: Run tfsec
     needs: []
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
       - name: Checkout
         uses: actions/checkout@v6
